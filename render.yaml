@@ -8,9 +8,7 @@ services:
     startCommand: npm start
     envVars:
       - key: MONGO_URI
-        sync: false # User will set this in Render Dashboard
-      - key: PORT
-        value: 5000
+        sync: false 
       - key: NODE_ENV
         value: production
       - key: EMAIL_USER
@@ -18,4 +16,4 @@ services:
       - key: EMAIL_PASS
         sync: false
       - key: AI_MODULE_URL
-        sync: false # Set if AI module is also deployed
+        sync: false
