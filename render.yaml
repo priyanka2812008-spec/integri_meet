@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: integrimeet-server
+    runtime: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false # User will set this in Render Dashboard
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: AI_MODULE_URL
+        sync: false # Set if AI module is also deployed
