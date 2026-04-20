@@ -43,6 +43,37 @@ IntegriMeet is a real-time video meeting platform prototype focused on preventin
 
 ---
 
+## 🌐 Deployment Guide (Live Hosting)
+
+To make IntegriMeet live, follow these steps:
+
+### 1. Backend Server (Render / Railway)
+- Connect your GitHub repo.
+- Root directory: `server`
+- Build Command: `npm install`
+- Start Command: `npm start`
+- **Environment Variables**:
+  - `MONGO_URI`: Your MongoDB Atlas connection string.
+  - `EMAIL_USER` & `EMAIL_PASS`: For automated violation emails.
+  - `AI_MODULE_URL`: The live URL of your AI module.
+
+### 2. Frontend Client (Vercel / Netlify)
+- Connect your GitHub repo.
+- Root directory: `client`
+- Framework Preset: `Vite`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- **Configuration**: Ensure the socket URL in `client/src/utils/socket.js` points to your live backend URL.
+
+### 3. AI Module (Render)
+- Connect your GitHub repo.
+- Root directory: `ai-module`
+- Environment: `Python`
+- Build Command: `pip install -r requirements.txt`
+- Start Command: `python app.py`
+
+---
+
 ## 🧪 Demo Scenario (How to Test)
 
 1. Open your browser to the Client URL (`http://localhost:5173`).
